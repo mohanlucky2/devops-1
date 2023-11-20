@@ -100,6 +100,8 @@ git reset --soft commitid
 as changes already present in staging area,just we have to revert back.
 3.reset with --hard
 --------------------
+   it is exactly same as --mixed except that changes will be removed from everywhere(working directory,staging area,local repository)
+	it is impossible to revert backand hence while using hard reset we have to take special care
 
 git reset --hard commitid
 
@@ -174,7 +176,5 @@ touch file
   226  git reset --hard ffacb73
 
 
- it is exactly same as --mixed except that changes will be removed from everywhere(working directory,staging area,local repository)
-	it is impossible to revert backand hence while using hard reset we have to take special care
 
 
