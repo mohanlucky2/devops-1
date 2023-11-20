@@ -103,6 +103,77 @@ as changes already present in staging area,just we have to revert back.
 
 git reset --hard commitid
 
+history:
+--------
+touch file
+  161  vim file
+  162  git status
+  163  git init
+  164  git status
+  165  git add .;git commit -m mc1
+  166  git log
+  167  git ls-files
+  168  vim file
+  169  git add .;git commit -m mc2
+  170  git log --oneline
+  171  git checkout -b feature
+  172  git branch
+  173  ls
+  174  cat file
+  175  vim file
+  176  git add .;git commit -m fc1
+  177  git log --oneline feature
+  178  git checkout master
+  179  ls
+  180  cat file
+  181  vim file
+  182  git add file;git commit -m mc3
+  183  git merge feature
+  184  vim file
+  185  git add file;git commit -m mc
+  186  git status
+  187  git ls-files
+  188  cat file
+  189  git config user.name admin
+  190  git config user.email admin@gmail.com
+  191  git config --list
+  192  ls
+  193  ls -al
+  194  rm -rf file  .git
+  195  touch file
+  196  vim file
+  197  ls -al
+  198  git init
+  199  git status
+  200  git add file
+  201  git status
+  202  git reset file
+  203  git status
+  204  git log
+  205  git commit -m c1
+  206  git add file ;git commit -m c1
+  207  git log
+  208  vim file
+  209  git add file ;git commit -m c2
+  210  git log --oneline
+  211  git reset --mixed 4454cff
+  212  git log --oneline
+  213  cat file
+  214  git status
+  215  git add file ;git commit c2
+  216  git add file ;git commit c3
+  217  git add file ;git commit -m c2
+  218  git log --oneline
+  219  git reset --soft 4454cff
+  220  git log --oneline
+  221  git status
+  222  git commit -m c2
+  223  git log --oneline
+  224  git reset --hard 4454cff
+  225  git status
+  226  git reset --hard ffacb73
+
+
  it is exactly same as --mixed except that changes will be removed from everywhere(working directory,staging area,local repository)
 	it is impossible to revert backand hence while using hard reset we have to take special care
 
