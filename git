@@ -1,0 +1,109 @@
+git:
+
+it is version control system
+
+git---global information tracker
+
+git have different statges
+ they are 
+1.working area
+2.staging/indexining area
+3.local repository
+4.remote repositoy
+
+
+git init ---->it can genrate the .git directory,it can initialise the git
+working area------(git add filename )------------------>staging area
+staging area------(git commit -m "commit-1")---------->local repo
+local repo-------(git push)--------------------------->remote repo
+got log --->it will show the commit history
+git status--->it is used to see the status of our file(working area or staging area )
+-------------------------------------------------------------------------------------
+git branch --->to seev the list of branches
+
+branch is nothing but individual workspace
+
+history:
+-------
+yum install git 
+ git -v
+    2  yum install git -y
+    3  mkdir git
+    4  ls -al
+    5  cd git/
+    6  git init
+    7  ls -al
+    8  touch file{1..5}
+    9  ls
+   10  git status
+   11  git add .
+   12  git commit -m "commit-1"
+   13  git branch
+   14  git checkout -b dev
+   15  git branch
+   16  ls
+   17  touch dev{1..5}
+   18  git add .
+   19  git commit -m "commit-2"
+   20  git log
+   21  ls
+   22  git checkout master
+   23  ls
+   24  git merge dev
+   25  ls
+   26  git branch -M main
+   27  git branch
+   28  git remote add origin https://github.com/mohanlucky2/git.git
+   29  git push -u origin main
+
+----------------------------------------------------------------------------
+git reset:
+----------
+1.to remove the changes from staging area
+2.to undo the commit at repository level
+
+to remove the changes from staging area
+----------------------------------------
+touch abc.txt
+git add abc.txt
+git ls-files --->it will show the files in the staging area
+git reset abc.txt--->it will move the file from staging area to working directory
+
+to undo the commit at repository level:
+--------------------------------------
+
+git reset <mode> <commit id>
+ 
+moves the HEAD to the specified commit ,and all remaining will recent commits will be removed.
+
+ mode will decide wether these changes are going to remove from staging area and working directory or not
+
+---mixed
+---soft
+---hard
+
+1.reset with mixed mode:
+------------------------
+  it is the default mode,to discard commits in the local repository and to discard changes in staging area we should use reset with mixed option,it will not touch working directory
+ git reset --mixed commit-id of (n-1)th,then only discard the che changes in local repository and (n)th the commitid similarly if you give (n-2 commitid) it will discard the changes in (n-1)th (n)th commit ids.
+ simply we can say that discard the changes in local repo and staging area,now the file available in working directory.
+ 
+git reset --mixed commitid--->it will remove the commit id and staging area changes
+
+3.reset with --soft mode:
+-------------------------
+   it is exactly same as --mixed option ,but changes are available in working directory as well as in staging area.
+it won't touch staging area and working directory
+
+git reset --soft commitid
+
+as changes already present in staging area,just we have to revert back.
+3.reset with --hard
+--------------------
+
+git reset --hard commitid
+
+ it is exactly same as --mixed except that changes will be removed from everywhere(working directory,staging area,local repository)
+	it is impossible to revert backand hence while using hard reset we have to take special care
+
+
