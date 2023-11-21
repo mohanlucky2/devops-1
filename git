@@ -174,7 +174,146 @@ touch file
   224  git reset --hard 4454cff
   225  git status
   226  git reset --hard ffacb73
+--------------------------------------------------------------------------------------------------------------------
+git merge and rebase:
+---------------------
+in git merge the commit history is available,if we use merge command it will create another commit id 
+but in rebase we con't get commit history beacuse it can delete the commits in the other branch and in the place of deletd commits it will create anther commands in the base branch(master) 
 
+practical:
+----------
+touch a.txt b.txt
+git add a.txt;git commit -m "mc1"
+git add b.txt;git commit -m "mc2"
+git checkout -b feature
+touch x.txt y.txt
+git add x.txt;git commit -m "fc1"
+git add y.txt;git commit -m "fc2"
+git log --oneline
+git checkout master
+touch c.txt 
+git add c.txt;git commit -m "mc2"
+git log --oneline master
+git log --oneline feature
+git checkout feature
+git rebase master
+git log --oneline master
+git log --oneline feature
+now we can compare the commit id's of feature branch(we can observe commit id's are changed)
+git checkout master
+git merge feature
+git log --oneline --graph --->it will show the list of commits 
 
-
+we don't use rebase in public repo working with team ,fir personal practice only we can use.
+history:
+--------
+ mkdir git
+   23  cd git/
+   24  git init
+   25  ls -al
+   26  touch abc.txt
+   27  vi abc.txt 
+   28  git commit -a -m c1
+   29  git add .
+   30  git commit  -m c1
+   31  vim abc.txt 
+   32  git checkout abc.txt
+   33  cat abc.txt 
+   34  vim a.txt
+   35  git add .;git commit -m "commit-1"
+   36  git log --one line
+   37  git log --oneline
+   38  git checkout -b dev
+   39  vim x.txt
+   40  git add .; git commit -m d1
+   41  vim y.txt
+   42  git add .; git commit -m d2
+   43  git log --online
+   44  git log --oneline
+   45  git checkout master
+   46  git checkout dev
+   47  git rebase master
+   48  git -v
+   49  mkdir gitpractice
+   50  cd gitpractice/
+   51  yum install git -y
+   52  git init
+   53  touch file;git add file;git commit -m "mc1"
+   54  sudo -i
+   55  git log --oneline
+   56  ls
+   57  cd gitpractice/
+   58  git log --oneline
+   59  ls
+   60  touch file1;git add file1;git commit -m "mc2"
+   61  git log --oneline
+   62  git checkout -b feature
+   63  git branch
+   64  touch a.txt;git add a.txt;git commit -m "fc1"
+   65  git log --oneline
+   66  touch b.txt;git add b.txt;git commit -m "fc2"
+   67  git log --oneline
+   68  git checkout master
+   69  touch file2;git add b.txt;git commit -m "fc2"
+   70  touch file2;git add file2;git commit -m "fc2"
+   71  git log --oneline
+   72  git checkout feature
+   73  git log --oneline
+   74  git rebase master
+   75  git log --oneline
+   76  git branch
+   77  git checkout master
+   78  git merge feature
+   79  ls
+   80  git log --oneline
+   81  ls
+   82  git branch
+   83  echo "hello"
+   84  echo "hello">>README.md
+   85  ls
+   86  ls -al
+   87   git add README.md
+   88  git commit -m "first commit"
+   89  git branch
+   90   git branch -M main
+   91  git branch
+   92   git branch -M anil
+   93  git branch
+   94   git branch -M main
+   95  git branch
+   96   git remote add origin https://github.com/mohanlucky2/git.git
+   97  git remote -v
+   98  git remote remove origin
+   99  git remote -v
+  100   git remote add origin https://github.com/mohanlucky2/git.git
+  101  git push -u origin main
+  102  git push -u origin feature
+  103  git branch
+  104  git branch -d feature
+  105  git branch
+  106  ls
+  107  git pull
+  108  ls
+  109  cat README.md 
+  110  git pull
+  111  cat README.md 
+  112  cd ..
+  113  git clone https://github.com/mohanlucky2/jenkins-java-project.git
+  114  ls
+  115  cd jenkins-java-project/
+  116  ls
+  117  cd ..
+  118  cd git
+  119  ls -al
+  120  git status
+  121  git ls-files
+  122  touch c.txt
+  123  git status
+  124  git ls-files
+  125  git add c.txt 
+  126  git ls-files
+  127  git status
+  128  git restore --staged c.txt 
+  129  git status
+  130  git ls-files
 
