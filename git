@@ -316,4 +316,141 @@ history:
   128  git restore --staged c.txt 
   129  git status
   130  git ls-files
+-------------------------------------------------------------------------------------------------------------------
+git -v
+    3  mkdir git
+    4  ls
+    5  rm -rf *
+    6  ls
+    7  mkdir git
+    8  cd git/
+    9  git init
+   10  touch index.txt master.txt
+   11  git status
+   12  git add .;git commit -m "c1"
+   13  git log --oneline
+   14  vim index.txt
+   15  git add index.txt;git commit -m "first change in index file"
+   16  git log --oneline
+   17  vim master.txt
+   18  git add master.txt;git commit -m "first change in master file"
+   19  git log --oneline
+   20  vim index.txt
+   21  git add index.txt;git commit -m "second change in index file"
+   22  git log --oneline
+   23  vim master.txt
+   24  git add master.txt;git commit -m "second change in master file"
+   25  git log --oneline
+   26  git reset --hard de5c118
+   27  cat master.txt
+   28  git log --oneline
+   29  git reset --hard 2246496
+   30  git log --oneline
+   31  git revert 2246496
+   32  git log --oneline
+   33  cat master.txt
+   34  git status
+   35  touch abc
+   36  git add abc
+   37  git status
+   38  git rm --staged abc
+   39  git rm --cached abc
+   40  git status
+   41  git add abc
+   42  git status
+   43  git rm --cached abc
+   44  git status
+   45  git add abc
+   46  git commit -m "c12"
+   47  touch xyz.txt
+   48  git add .
+   49  git stash
+   50  git status
+   51  touch abcd
+   52  git add abcd ;git commit -m "c3"
+   53  git stash list
+   54  touch ram.txt
+   55  git add ram.txt
+   56  git stash
+   57  git stash list
+   58  git stash pop stash@{0}
+   59  git stash pop stash@{1}
+   60  git commit -m "c4"
+   61  git stash list
+   62  git stash pop stash@{0}
+   63  git commit -m "c5"
+   64  ls
+   65  rm -rf *
+   66  rm -rf .git
+   67  ls
+   68  ls -al
+   69  git init
+   70  touch file{1..5}
+   71  ls
+   72  vim .gitignore
+   73  git status
+   74  ls
+   75  git add .;git commit -m "c5"
+   76  git status
+   77  rm -rf .git
+   78  ls
+   79  ls -al
+   80  rm -rf *
+   81  git init
+   82  touch file
+   83  vim file
+   84  git add file ;git commit -m "c1"
+   85  cat file
+   86  vim file
+   87  git sttus
+   88  git status
+   89  cat file
+   90  git checkout file
+   91  cat file
+   92  rm -rf .git
+   93  cat file
+   94  git init
+   95  git status
+   96  rm -rf .gitignore
+   97  git status
+   98  git add file ;git commit -m "c1"
+   99  git log --oneline
+  100  git log
+  101  git log --oneline
+  102  vim file
+  103  git diff da7bd52 file
+  104  cat file
+  105  git status
+  106  git add file
+  107  git diff --staged HEAD
+  108  gicommit -m "c2"
+  109  git commit -m "c2"
+  110  git diff --staged HEAD
+  111  git branch
+  112  git checkout -b dev
+  113  git dev
+  114  git branch
+  115  touch file1
+  116  git add .: git commit -m "c12"
+  117  git add .; git commit -m "c12"
+  118  touch file2
+  119  git add .; git commit -m "c13"
+  120  touch file3
+  121  git add .; git commit -m "c14"
+  122  git log --oneline
+  123  git checkout master
+  124  git log --oneline
+  125  git cherry-pick 3583c24
+  126  git log --oneline
+  127  ls
+  128  git clone https://github.com/mohanlucky2/git.git
+  129  ls
+  130  cd git/
+  131  ls
+  132  git pull
+  133  ls
+  134  git fetch
+  135  ls
+  136  git merge
+  137  ls
 
